@@ -1,0 +1,63 @@
+<<<<<<< HEAD
+{% extends "base.html" %}
+
+{% block title %}Records{% endblock %}
+
+{% block content %}
+<h1>All Records</h1>
+<p><a href="{{ url_for('main.create_record') }}">+ Create New Record</a></p>
+
+{% if records %}
+    <ul>
+    {% for record in records %}
+        <li>
+            <strong>{{ record.title }}</strong>
+            {% if record.content %}
+                <p>{{ record.content }}</p>
+            {% endif %}
+            
+            <!-- View, Edit, Delete -->
+            <a href="{{ url_for('main.view_record', id=record.id) }}">View</a> |
+            <a href="{{ url_for('main.edit_record', id=record.id) }}">Edit</a> |
+            <form method="POST" action="{{ url_for('main.delete_record', id=record.id) }}" style="display:inline;" onsubmit="return confirm('Delete this record?');">
+                <button type="submit">Delete</button>
+            </form>
+        </li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No records yet. Create your first one!</p>
+{% endif %}
+{% endblock %}
+=======
+{% extends "base.html" %}
+
+{% block title %}Records{% endblock %}
+
+{% block content %}
+<h1>All Records</h1>
+<p><a href="{{ url_for('main.create_record') }}">+ Create New Record</a></p>
+
+{% if records %}
+    <ul>
+    {% for record in records %}
+        <li>
+            <strong>{{ record.title }}</strong>
+            {% if record.content %}
+                <p>{{ record.content }}</p>
+            {% endif %}
+            
+            <!-- View, Edit, Delete -->
+            <a href="{{ url_for('main.view_record', id=record.id) }}">View</a> |
+            <a href="{{ url_for('main.edit_record', id=record.id) }}">Edit</a> |
+            <form method="POST" action="{{ url_for('main.delete_record', id=record.id) }}" style="display:inline;" onsubmit="return confirm('Delete this record?');">
+                <button type="submit">Delete</button>
+            </form>
+        </li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No records yet. Create your first one!</p>
+{% endif %}
+{% endblock %}
+>>>>>>> 4eea04cc5b8ab6a74f0a65f3a68c4f6f847b7739

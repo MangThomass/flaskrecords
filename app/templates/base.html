@@ -1,0 +1,53 @@
+<<<<<<< HEAD
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Jinja2 block: child templates override this -->
+    <title>{% block title %}FlaskRecords{% endblock %}</title>
+    <style>
+        /* Simple styling */
+        body { font-family: Arial, sans-serif; margin: 40px; }
+        nav { margin-bottom: 20px; }
+        nav a { margin-right: 15px; }
+    </style>
+</head>
+<body>
+    <nav>
+        <!-- url_for: generates URLs from function names (avoids hardcoding) -->
+        <a href="{{ url_for('main.index') }}">Home</a>
+        <a href="{{ url_for('main.about') }}">About</a>
+    </nav>
+    
+    <!-- Content block: child templates inject content here -->
+    {% block content %}{% endblock %}
+</body>
+</html>
+=======
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Jinja2 block: child templates override this -->
+    <title>{% block title %}FlaskRecords{% endblock %}</title>
+    <style>
+        /* Simple styling */
+        body { font-family: Arial, sans-serif; margin: 40px; }
+        nav { margin-bottom: 20px; }
+        nav a { margin-right: 15px; }
+    </style>
+</head>
+<body>
+    <nav>
+        <!-- url_for: generates URLs from function names (avoids hardcoding) -->
+        <a href="{{ url_for('main.index') }}">Home</a>
+        <a href="{{ url_for('main.about') }}">About</a>
+    </nav>
+    
+    <!-- Content block: child templates inject content here -->
+    {% block content %}{% endblock %}
+</body>
+</html>
+>>>>>>> 4eea04cc5b8ab6a74f0a65f3a68c4f6f847b7739

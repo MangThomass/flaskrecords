@@ -1,0 +1,105 @@
+<<<<<<< HEAD
+{% extends "base.html" %}
+
+{% block title %}{{ action }} Record{% endblock %}
+
+{% block content %}
+<h1>{{ action }} Record</h1>
+
+<!-- Display flash messages (success/error notifications) -->
+{% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        {% for category, message in messages %}
+            <div class="alert alert-{{ category }}">{{ message }}</div>
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+
+<!-- Form with CSRF protection -->
+<form method="POST" action="">
+    <!-- hidden_tag(): includes CSRF token (prevents CSRF attacks) -->
+    {{ form.hidden_tag() }}
+    
+    <div>
+        {{ form.title.label }}
+        {{ form.title(size=50) }}
+        <!-- Display validation errors -->
+        {% if form.title.errors %}
+            <ul class="errors">
+            {% for error in form.title.errors %}
+                <li>{{ error }}</li>
+            {% endfor %}
+            </ul>
+        {% endif %}
+    </div>
+    
+    <div>
+        {{ form.content.label }}
+        {{ form.content(rows=10, cols=50) }}
+        {% if form.content.errors %}
+            <ul class="errors">
+            {% for error in form.content.errors %}
+                <li>{{ error }}</li>
+            {% endfor %}
+            </ul>
+        {% endif %}
+    </div>
+    
+    <div>
+        {{ form.submit() }}
+    </div>
+</form>
+{% endblock %}
+=======
+{% extends "base.html" %}
+
+{% block title %}{{ action }} Record{% endblock %}
+
+{% block content %}
+<h1>{{ action }} Record</h1>
+
+<!-- Display flash messages (success/error notifications) -->
+{% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        {% for category, message in messages %}
+            <div class="alert alert-{{ category }}">{{ message }}</div>
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+
+<!-- Form with CSRF protection -->
+<form method="POST" action="">
+    <!-- hidden_tag(): includes CSRF token (prevents CSRF attacks) -->
+    {{ form.hidden_tag() }}
+    
+    <div>
+        {{ form.title.label }}
+        {{ form.title(size=50) }}
+        <!-- Display validation errors -->
+        {% if form.title.errors %}
+            <ul class="errors">
+            {% for error in form.title.errors %}
+                <li>{{ error }}</li>
+            {% endfor %}
+            </ul>
+        {% endif %}
+    </div>
+    
+    <div>
+        {{ form.content.label }}
+        {{ form.content(rows=10, cols=50) }}
+        {% if form.content.errors %}
+            <ul class="errors">
+            {% for error in form.content.errors %}
+                <li>{{ error }}</li>
+            {% endfor %}
+            </ul>
+        {% endif %}
+    </div>
+    
+    <div>
+        {{ form.submit() }}
+    </div>
+</form>
+{% endblock %}
+>>>>>>> 4eea04cc5b8ab6a74f0a65f3a68c4f6f847b7739
